@@ -66,7 +66,6 @@ namespace NumbersGame
             return wantToRetry;
         }
 
-
         //function for checking if used guessed right.
         private static bool CheckGuess(int guessedNr, int rightAnswer, string[] high, string[] low, string[] close)
         {   
@@ -167,7 +166,6 @@ namespace NumbersGame
                         playing = CheckRetry();
                         isGuessing = false;
                     }
-
                 }
             }
             Console.WriteLine("Tack för att du spela.");
