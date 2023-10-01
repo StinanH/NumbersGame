@@ -23,7 +23,6 @@ namespace NumbersGame
                     highestNr = 20;
                     break;
             }
-
             return highestNr;
         }
 
@@ -61,12 +60,12 @@ namespace NumbersGame
                 {
                     Console.WriteLine("Ange ja eller nej.");
                 }
-
             }
+            Console.Clear();
             return wantToRetry;
         }
 
-        //function for checking if used guessed right.
+        //function for checking if user guessed right.
         private static bool CheckGuess(int guessedNr, int rightAnswer, string[] high, string[] low, string[] close)
         {   
             Random rand = new Random();
@@ -98,16 +97,16 @@ namespace NumbersGame
             bool playing = true;
             bool isGuessing = true;
             bool guessedright;
-            string[] tooHigh = { "för högt!", "Tyvärr! inte lågt nog!", "Gissa lägre!" };
-            string[] tooLow = { "för lågt..", "Ta i lite, högre!", "Tänk större! för lågt"};
-            string[] close = { "nära!", "oooo! nästan!", "inte långt ifrån!" };
+            string[] tooHigh = { "för högt!", "Tyvärr, för högt!", "För högt, gissa lägre!" };
+            string[] tooLow = { "Högre!", "Nope, för lågt!", "Nej, för lågt!"};
+            string[] close = { "nära!", "wow, nästan!", "inte långt ifrån!" };
             string input;
             int guessedNr;
             int difficulty;
             int highestNumber;
             int nrOfGuesses = 0;
 
-            Console.Write("Välkommen! ");
+            Console.Write("Välkommen!");
             Console.WriteLine("\nJag tänker på ett nummer. Kan du gissa vilket? Du får fem försök.");
 
             //runs for as long as player wants to play the game.
@@ -126,7 +125,7 @@ namespace NumbersGame
                 int rightAnswer = GenerateRandomNumber(highestNumber);
                 isGuessing = true;
 
-                Console.WriteLine($"Ok, jag tänker på ett tal mellan 1-{highestNumber}, gissa vilket:");
+                Console.WriteLine($"Jag tänker på ett tal mellan 1-{highestNumber}, gissa vilket:");
 
                 //runs while player is guessing the answer
                 while (isGuessing)
@@ -168,7 +167,7 @@ namespace NumbersGame
                     }
                 }
             }
-            Console.WriteLine("Tack för att du spela.");
+            Console.WriteLine("Tack för att du spelade!");
         }
     }
 }
